@@ -40,7 +40,7 @@ PM也许会与SSD、HDD等设备共同使用。
 
 对LevelDB进行分析。
 
-![SlimDB](D:\文件库\研究生\Learner\笔记\SlimDB.png)
+![img](img\SlimDB.png)
 
 ## 🍟实现方案：
 
@@ -60,7 +60,7 @@ LevelDB复用：
 
 重新设计了levelDB的随机读和范围查询操作。
 
-![SlimDB2](D:\文件库\研究生\Learner\笔记\SlimDB2.png)
+![img](img\SlimDB2.png)
 
 
 

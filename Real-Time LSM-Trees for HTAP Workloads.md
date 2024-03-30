@@ -73,7 +73,7 @@ CG1：<A,B,C>. CG2:<D>.
 
 **通过CG表示的设计空间：**
 
-![HTAP1](D:\文件库\研究生\Learner\笔记\HTAP1.png)
+![img](img\HTAP1.png)
 
 指的是 LSM 每一个 level 都可以使用特定的 CG 形式。例如上图，最左边是面向 TP 的行存形式；最右边是面向 AP 的列存格式；而中间是一种混合设计模式。
 
@@ -95,7 +95,7 @@ The HTAP storage engine based on Real-Time LSM-Trees。
 
 考虑LSM tree结构查询数据时，某个元组的列值可能连续，因此对于CG数据模型，将其与key一起存储。引入的额外开销由于列存模型较优的压缩性能可以忽略。
 
-![HTAP2](D:\文件库\研究生\Learner\笔记\HTAP2.png)
+![img](img\HTAP2.png)
 
 写入操作：
 
@@ -109,7 +109,7 @@ The HTAP storage engine based on Real-Time LSM-Trees。
 
 **Range queries (with projections)** 在每个 level 中进行遍历处理，然后按顺序返回值，且过滤掉旧版本值。每一层迭代器都是对指定的投影列来查找。与点查一样会在不同的 level 中找到列值。通过使用 **LevelMergingIterators** 合并不同 level 的值，通过 **ColumnMergingIterators** 来处理同一Level中各个CG中的列的值。
 
-![HTAP3](D:\文件库\研究生\Learner\笔记\HTAP3.png)
+![img](img\HTAP3.png)
 
 问题：
 
@@ -127,7 +127,7 @@ Compaction1：将Level1的CG<A,B>,合并到Level2的CG<A>,CG<B>中。
 
 Compaction2：将Level2的CG<C>合并到Level3的CG<C>中。
 
-![HTAP4](D:\文件库\研究生\Learner\笔记\HTAP4.png)
+![img](img\HTAP4.png)
 
 **LevelMergingIterators** 在范围查找和 compaction 时，从每个 level 获取和合并对应的元组，同时删除属性对应的旧版本值。
 

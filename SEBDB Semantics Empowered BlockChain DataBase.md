@@ -28,7 +28,7 @@ Blockchain has been adopted in many applications to construct trust among multip
 
 在fabric上实现时：
 
-![SEBDB1](D:\文件库\研究生\Learner\笔记\SEBDB1.png)
+![img](img\SEBDB1.png)
 
 所有参与者共享的事务（称为链上数据）存储在Hyperledger Fabric中，而其余的私有信息（称为链下数据）由每个本地RDBMS管理。
 
@@ -72,7 +72,7 @@ Blockchain has been adopted in many applications to construct trust among multip
 
 现有方案总结：
 
-![SEBDB2](D:\文件库\研究生\Learner\笔记\SEBDB2.png)
+![img](img\SEBDB2.png)
 
 ## 🍚研究对象：
 
@@ -128,7 +128,7 @@ Distribute( project , donor, organization, donee, amount).”
 
 SEBDB共有五层：1、应用层。2、查询层。3、存储和索引层。4、共识层。5、网络层。
 
-![SEBDB3](D:\文件库\研究生\Learner\笔记\SEBDB3.png)
+![img](img\\SEBDB3.png)
 
 1、应用层
 
@@ -158,7 +158,7 @@ SEBDB同时维护链上和链下数据，链下数据存储于本地RDMS中，�
 
 链上数据组织为区块，追加写入到文件中，写入后变为不可改变。大小为256MB，可控。
 
-![SEBDB4](D:\文件库\研究生\Learner\笔记\SEBDB4.png)
+![img](img\SEBDB4.png)
 
 考虑以256MB的区块为单位存储数据，进行查找时的效率问题，额外维护索引接口以提高查询性能。
 
@@ -172,7 +172,7 @@ SEBDB同时维护链上和链下数据，链下数据存储于本地RDMS中，�
 
 实现了三类索引结构：
 
-![SEBDB5](D:\文件库\研究生\Learner\笔记\SEBDB5.png)
+![img](img\SEBDB5.png)
 
 1、Block-level B+ tree
 
@@ -242,7 +242,7 @@ track-trace是一种一元操作，旨在从两个维度进行跟踪：
 
 2、发送的是哪个交易。
 
-![SEBDB6](D:\文件库\研究生\Learner\笔记\SEBDB6.png)
+![img](img\SEBDB6.png)
 
 像，追踪所有由org1发送的交易。链上的join操作是一个二叉操作。
 

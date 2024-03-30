@@ -40,7 +40,7 @@ PACTREE是一个持久、混合范围索引，由基于trie的内部节点（sea
 
 同时利用异步并发减少由于SMO造成的阻塞时间，从而实现高可扩展性。
 
-![PACTree](D:\文件库\研究生\Learner\笔记\PACTree.png)
+![img](img\PACTree.png)
 
 搜索层：
 
@@ -82,7 +82,7 @@ ART提供的读操作可作用到未持久化的写操作上，与持久线性�
 
 结构：是类B+tree节点组成的双链表结构，称为数据节点data node。每个包含多个kv对：
 
-![PACTree2](D:\文件库\研究生\Learner\笔记\PACTree2.png)
+![img](img\PACTree2.png)
 
 插槽式列表结构支持插入、删除、更新操作--避免昂贵的持久化内存分配。
 

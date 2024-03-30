@@ -79,7 +79,7 @@ kv存储在高空间局部性负载下的针对设计。
 
 将B树的空间数据划分与LSM的优化I/O和快速访问相结合。
 
-![EvenDB1](D:\文件库\研究生\Learner\笔记\EvenDB1.png)
+![img](img\EvenDB1.png)
 
 chunks：
 
@@ -119,7 +119,7 @@ raw cache对于chunks中，较少key为热数据的情况。
 
 EvenDB设计
 
-![EvenDB2](D:\文件库\研究生\Learner\笔记\EvenDB2.png)
+![img](img\EvenDB2.png)
 
 数据组织：
 

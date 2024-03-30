@@ -50,7 +50,7 @@ LSM-tree由于其性能优势，更贴合现代硬件、软件需求，被广泛
 
 次年有学者提出了tiering合并策略。
 
-![LSM](D:\文件库\研究生\Learner\笔记\LSM.png)
+![img](img\LSM.png)
 
 相邻层的大小由比率T决定。每个层内的组件由其存储的key的范围标识。
 
@@ -108,7 +108,7 @@ leveling和tiering都可以支持分区。
 
 **实现方案**：每层的磁盘组件根据范围划分为多个固定大小的SSTable。level0由于直接存储内存中的数据，所以不进行分区。同时也可以应对突发大量写入。
 
-![LSM2](D:\文件库\研究生\Learner\笔记\LSM2.png)
+![img](img\LSM2.png)
 
 如图，level1第一个分区写满需要合并，选中level2的与其key重合的分区进行合并，在level2生成新的分区。然后对原本的分区进行垃圾回收。
 
@@ -122,7 +122,7 @@ Tiering 分区，每层有多个组件，所以可能有多个key范围重叠的
 
 合并时，组内数据合并到一起然后根据下层的范围重叠的组内的各个SSTable的范围生成新的SSTable并写入对应的下层的位置。SSTable的大小与下层的范围有关，不是固定的。
 
-![LSM3](D:\文件库\研究生\Learner\笔记\LSM3.png)
+![img](img\LSM3.png)
 
 水平分组时，不重叠的在一组。每个组件被划分为固定大小的SSTable。
 
@@ -130,7 +130,7 @@ Tiering 分区，每层有多个组件，所以可能有多个key范围重叠的
 
 合并时从该层中所有组中选择key范围重叠的SSTable，产生新的SSTable写入下一层的活跃组。
 
-![LSM4](D:\文件库\研究生\Learner\笔记\LSM4.png)
+![img](img\LSM4.png)
 
 3、并发控制与恢复
 
@@ -182,7 +182,7 @@ tiering：O(T·L)
 
 4、LSM优化分类总结：
 
-![LSM5](D:\文件库\研究生\Learner\笔记\LSM5.png)
+![img](img\LSM5.png)
 
 1、写放大：
 
